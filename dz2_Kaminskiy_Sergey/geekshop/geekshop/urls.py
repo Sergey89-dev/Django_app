@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mainapp import views as mainapp
+from django.conf.urls.static import static
+
+from django.conf import settings
 
 urlpatterns = [
     path('', mainapp.index, name='index'),
@@ -27,3 +30,6 @@ urlpatterns = [
     path('products/classic/', mainapp.products_classic, name='products_classic'),
     path('products/modern/', mainapp.products_modern, name='products_modern')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static
