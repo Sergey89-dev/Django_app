@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+AUTH_USER_MODEL = 'authapp.ShopUser'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

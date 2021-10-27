@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
 from mainapp import views as mainapp
 from django.conf.urls.static import static
 
@@ -28,7 +29,8 @@ urlpatterns = [
     path('products/home/', mainapp.products_home, name='products_home'),
     path('products/office/', mainapp.products_office, name='products_office'),
     path('products/classic/', mainapp.products_classic, name='products_classic'),
-    path('products/modern/', mainapp.products_modern, name='products_modern')
+    path('products/modern/', mainapp.products_modern, name='products_modern'),
+    path('auth/', include('authapp.urls', namespace = 'auth'))
 ]
 
 if settings.DEBUG:
